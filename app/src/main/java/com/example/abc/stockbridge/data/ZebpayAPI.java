@@ -3,11 +3,14 @@ package com.example.abc.stockbridge.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
 /**
  * Created by Priyank Jain on 09-09-2017.
  */
 
-public class ZebpayAPI {
+public class ZebpayAPI extends ArrayList<ZebpayAPI> {
 
     @SerializedName("market")
     @Expose
@@ -90,4 +93,8 @@ public class ZebpayAPI {
         return this;
     }
 
+    @Override
+    public Stream<ZebpayAPI> stream() {
+        return null;
+    }
 }

@@ -37,7 +37,7 @@ public class LatestCrypto {
     private String availableSupply;
     @SerializedName("total_supply")
     @Expose
-    private String totalSupply;
+    private Float totalSupply;
     @SerializedName("max_supply")
     @Expose
     private Object maxSupply;
@@ -171,15 +171,15 @@ public class LatestCrypto {
         return this;
     }
 
-    public String getTotalSupply() {
+    public Float getTotalSupply() {
         return totalSupply;
     }
 
-    public void setTotalSupply(String totalSupply) {
+    public void setTotalSupply(Float totalSupply) {
         this.totalSupply = totalSupply;
     }
 
-    public LatestCrypto withTotalSupply(String totalSupply) {
+    public LatestCrypto withTotalSupply(Float totalSupply) {
         this.totalSupply = totalSupply;
         return this;
     }
@@ -236,8 +236,8 @@ public class LatestCrypto {
         return this;
     }
 
-    public String getLastUpdated() {
-        return lastUpdated;
+    public Float getLastUpdated() {
+        return Float.valueOf(lastUpdated);
     }
 
     public void setLastUpdated(String lastUpdated) {

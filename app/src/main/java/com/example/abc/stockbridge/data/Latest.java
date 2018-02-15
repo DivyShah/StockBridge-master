@@ -11,13 +11,13 @@ import java.util.List;
 
 public class Latest {@SerializedName("")
 @Expose
-private List<LatestCrypto> latestCryptos = null;
+private List<List<LatestCrypto>> latestCryptos = null;
 
-    public List<LatestCrypto> getLatestCryptos() {
+    public List<List<LatestCrypto>> getLatestCryptos() {
         return latestCryptos;
     }
 
-    public void setLatestCryptos(List<LatestCrypto> latestCryptos) {
+    public void setLatestCryptos(List<List<LatestCrypto>> latestCryptos) {
         this.latestCryptos = latestCryptos;
     }
 

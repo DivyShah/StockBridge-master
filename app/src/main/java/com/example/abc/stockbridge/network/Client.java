@@ -1,6 +1,5 @@
 package com.example.abc.stockbridge.network;
 
-import com.example.abc.stockbridge.data.Latest;
 import com.example.abc.stockbridge.data.LatestCrypto;
 import com.example.abc.stockbridge.data.ZebpayAPI;
 import com.example.abc.stockbridge.data.CoinSecure;
@@ -68,7 +67,42 @@ public interface Client {
     Call<CryptoCurrency> getoneyearBTC();
 
     @GET("ticker/?limit=10")
-    Call<Latest> getlatestprice();
+    Call<List<LatestCrypto>> getlatestprice();
+
+    @GET("1day/LTC")
+    Call<CryptoCurrency> getonedayLTC();
+
+    @GET("7day/LTC")
+    Call<CryptoCurrency> getsevendayLTC();
+    @GET("30day/LTC")
+    Call<CryptoCurrency> getonemonthLCT();
+    @GET("90day/LTC")
+    Call<CryptoCurrency> getthreemonthLTC();
+    @GET("180day/LTC")
+    Call<CryptoCurrency> getsixmonthLTC();
+    @GET("365day/LTC")
+    Call<CryptoCurrency> getoneyearLTC();
+
+
+    @GET("1day/BCH")
+    Call<CryptoCurrency> getonedayBCH();
+
+    @GET("7day/BCH")
+    Call<CryptoCurrency> getsevendayBCH();
+    @GET("30day/BCH")
+    Call<CryptoCurrency> getonemonthBCH();
+    @GET("90day/BCH")
+    Call<CryptoCurrency> getthreemonthBCH();
+    @GET("180day/BCH")
+    Call<CryptoCurrency> getsixmonthBCH();
+    @GET("365day/BCH")
+    Call<CryptoCurrency> getoneyearBCH();
+
+
+
+    @GET("ticker-new/bch/inr")
+    Call<List<ZebpayAPI>> getbitcoinzebpay();
+
 
 
 

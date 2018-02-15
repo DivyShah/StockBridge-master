@@ -2,6 +2,7 @@ package com.example.abc.stockbridge;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.opengl.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,6 +54,7 @@ public class ExploreActivity extends AppCompatActivity {
     Client client;
     WebView webView;
     Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,13 +79,15 @@ public class ExploreActivity extends AppCompatActivity {
         allexchanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFilterPopup(v);
+
+               // showFilterPopup(v);
             }
         });
         one_week.setClickable(true);
         one_hour.setClickable(true);
         one_day.setClickable(true);
         one_year.setClickable(true);
+
         //buy.setText(String.valueOf(getprice.get(getprice.size()-1).get(1)));
         //String url= (String) bundle.get("two");
 //        buy.setTextColor(Color.parseColor("#FFFFFF"));
@@ -100,6 +104,8 @@ public class ExploreActivity extends AppCompatActivity {
             buy.setText(hello);
 
 
+
+
         }
         else if(bundle.get("two")!=null)
         {
@@ -114,6 +120,24 @@ public class ExploreActivity extends AppCompatActivity {
         {
             display_coin.setText("ETH/USD Price");
             String s =Utils.getAPI(Utils.one_day_etherum);
+            client=ServiceGenrator.createService(Client.class,s);
+            String hello=callonedayprice(client,"one_hour");
+            buy.setText(hello);
+            callgraph(client,"one_hour");
+        }
+        else if(bundle.get("four")!=null)
+        {
+            display_coin.setText("LTC/USD Price");
+            String s =Utils.getAPI(Utils.one_day_litecoin);
+            client=ServiceGenrator.createService(Client.class,s);
+            String hello=callonedayprice(client,"one_hour");
+            buy.setText(hello);
+            callgraph(client,"one_hour");
+        }
+        else if(bundle.get("five")!=null)
+        {
+            display_coin.setText("BCH/USD price");
+            String s =Utils.getAPI(Utils.one_day_bitcoin_cash);
             client=ServiceGenrator.createService(Client.class,s);
             String hello=callonedayprice(client,"one_hour");
             buy.setText(hello);
@@ -146,6 +170,22 @@ public class ExploreActivity extends AppCompatActivity {
                     callonedayprice(client,"one_hour");
                     callgraph(client,"one_hour");
                 }
+                else  if(bundle.get("four")!=null)
+                {
+                    String s= Utils.getAPI(Utils.one_day_litecoin);
+                    client= ServiceGenrator.createService(Client.class,s);
+                    callonedayprice(client,"one_hour");
+                    callgraph(client,"one_hour");
+                }
+                else  if(bundle.get("five")!=null)
+                {
+                    String s= Utils.getAPI(Utils.one_day_bitcoin_cash);
+                    client= ServiceGenrator.createService(Client.class,s);
+                    callonedayprice(client,"one_hour");
+                    callgraph(client,"one_hour");
+                }
+
+
 
 
 
@@ -175,6 +215,21 @@ public class ExploreActivity extends AppCompatActivity {
                 else  if(bundle.get("three")!=null)
                 {
                     String s = Utils.getAPI(Utils.one_day_etherum);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_day");
+                    callgraph(client, "one_day");
+                }
+                else  if(bundle.get("four")!=null)
+                {
+                    String s = Utils.getAPI(Utils.one_day_litecoin);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_day");
+                    callgraph(client, "one_day");
+                }
+
+                else  if(bundle.get("five")!=null)
+                {
+                    String s = Utils.getAPI(Utils.one_day_bitcoin_cash);
                     client = ServiceGenrator.createService(Client.class, s);
                     callonedayprice(client, "one_day");
                     callgraph(client, "one_day");
@@ -211,6 +266,22 @@ public class ExploreActivity extends AppCompatActivity {
                     callgraph(client, "one_week");
 
                 }
+                else  if(bundle.get("four")!=null)
+                {
+                    String s = Utils.getAPI(Utils.seven_day_litecoin);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_week");
+                    callgraph(client, "one_week");
+
+                }
+                else  if(bundle.get("five")!=null)
+                {
+                    String s = Utils.getAPI(Utils.seven_day_bitcoin_cash);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_week");
+                    callgraph(client, "one_week");
+
+                }
 
 
             }
@@ -242,6 +313,23 @@ public class ExploreActivity extends AppCompatActivity {
                     callonedayprice(client, "one_month");
                     callgraph(client,"one_month");
                 }
+                else  if(bundle.get("four")!=null)
+                {
+                    String s = Utils.getAPI(Utils.one_month_litecoin);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_month");
+                    callgraph(client,"one_month");
+                }
+
+                else  if(bundle.get("five")!=null)
+                {
+                    String s = Utils.getAPI(Utils.one_month_bitcoin_cash);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_month");
+                    callgraph(client,"one_month");
+                }
+
+
 
             }
         });
@@ -268,6 +356,21 @@ public class ExploreActivity extends AppCompatActivity {
                 else  if(bundle.get("three")!=null)
                 {
                     String s = Utils.getAPI(Utils.threemonthethereum);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "three_month");
+                    callgraph(client, "three_month");
+                }
+                else  if(bundle.get("four")!=null)
+                {
+                    String s = Utils.getAPI(Utils.three_montyh_litecoin);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "three_month");
+                    callgraph(client, "three_month");
+                }
+
+                else  if(bundle.get("five")!=null)
+                {
+                    String s = Utils.getAPI(Utils.three_montyh_bitcoin_cash);
                     client = ServiceGenrator.createService(Client.class, s);
                     callonedayprice(client, "three_month");
                     callgraph(client, "three_month");
@@ -303,6 +406,21 @@ public class ExploreActivity extends AppCompatActivity {
                     callonedayprice(client, "six_month");
                     callgraph(client,"six_month");
                 }
+                else  if(bundle.get("four")!=null)
+                {
+                    String s = Utils.getAPI(Utils.six_month_litecoin);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "six_month");
+                    callgraph(client,"six_month");
+                }
+
+                else  if(bundle.get("five")!=null)
+                {
+                    String s = Utils.getAPI(Utils.six_month_bitcoin_cash);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "six_month");
+                    callgraph(client,"six_month");
+                }
 
 
             }
@@ -334,6 +452,21 @@ public class ExploreActivity extends AppCompatActivity {
                     callgraph(client,"one_year");
                 }
 
+                else  if(bundle.get("four")!=null)
+                {
+                    String s = Utils.getAPI(Utils.one_year_litecoin);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_year");
+                    callgraph(client,"one_year");
+                }
+                else  if(bundle.get("five")!=null)
+                {
+                    String s = Utils.getAPI(Utils.one_year_bitcoin_cash);
+                    client = ServiceGenrator.createService(Client.class, s);
+                    callonedayprice(client, "one_year");
+                    callgraph(client,"one_year");
+                }
+
             }
         });
 
@@ -342,121 +475,114 @@ public class ExploreActivity extends AppCompatActivity {
     private String callonedayprice(Client client, final String whichType) {
         Call<CryptoCurrency> cryptoCurrencyCall = null;
         if (whichType.equals("one_hour")) {
-            if(bundle.get("three")!=null) {
+            if (bundle.get("three") != null) {
 
                 cryptoCurrencyCall = client.getonedayETH();
+            } else if (bundle.get("two") != null) {
+                cryptoCurrencyCall = client.getonedayXRP();
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getGetonedayBTC();
             }
-            else  if(bundle.get("two")!=null)
-            {
-                cryptoCurrencyCall=client.getonedayXRP();
-            }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getGetonedayBTC();
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getonedayBCH();
             }
 
         }
 
         else if (whichType.equals("one_day")) {
             cryptoCurrencyCall = client.getonedayETH();
-            if(bundle.get("two")!=null)
-            {
-                cryptoCurrencyCall=client.getonedayXRP();
-            }
-            else  if(bundle.get("three")!=null)
-            {
+            if (bundle.get("two") != null) {
+                cryptoCurrencyCall = client.getonedayXRP();
+            } else if (bundle.get("three") != null) {
                 cryptoCurrencyCall = client.getonedayETH();
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getGetonedayBTC();
             }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getGetonedayBTC();
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getonedayBCH();
             }
 
-        } else if (whichType.equals("one_week")) {
-            if(bundle.get("two")!=null)
-            {
+        }
 
-                cryptoCurrencyCall=client.getsevendayXRP();
-            }
-            else  if(bundle.get("three")!=null)
-            {
+        else if (whichType.equals("one_week")) {
+            if (bundle.get("two") != null) {
+
+                cryptoCurrencyCall = client.getsevendayXRP();
+            } else if (bundle.get("three") != null) {
 
                 cryptoCurrencyCall = client.getsevendayETH();
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getsevendayBTC();
             }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getsevendayBTC();
-            }
-
-        }
-        else if(whichType.equals("one_month"))
-        {
-
-            if(bundle.get("two")!=null)
-            {
-                cryptoCurrencyCall=client.getonemonthXRP();
-            }
-            else  if(bundle.get("three")!=null)
-            {
-                cryptoCurrencyCall=client.getonemonthETH();
-            }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getonemonthBCT();
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getsevendayBCH();
             }
 
         }
-        else if(whichType.equals("three_month"))
-        {
+
+        else if (whichType.equals("one_month")) {
+
+            if (bundle.get("two") != null) {
+                cryptoCurrencyCall = client.getonemonthXRP();
+            } else if (bundle.get("three") != null) {
+                cryptoCurrencyCall = client.getonemonthETH();
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getonemonthBCT();
+            }
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getonemonthBCH();
+            }
+
+        }
+
+        else if (whichType.equals("three_month")) {
 
 
-            if(bundle.get("two")!=null)
-            {
+            if (bundle.get("two") != null) {
                 cryptoCurrencyCall = client.getthreemonthXRP();
-            }
-            else  if(bundle.get("three")!=null)
-            {cryptoCurrencyCall = client.getThreemonthsETH();
+            } else if (bundle.get("three") != null) {
+                cryptoCurrencyCall = client.getThreemonthsETH();
 
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getthreemonthBTC();
             }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getthreemonthBTC();
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getthreemonthBCH();
             }
+
 
         }
-        else if(whichType.equals("six_month"))
-        {
+
+        else if (whichType.equals("six_month")) {
 
 
-            if(bundle.get("two")!=null)
-            {
+            if (bundle.get("two") != null) {
                 cryptoCurrencyCall = client.getsixmonthXRP();
-            }
-            else  if(bundle.get("three")!=null)
-            {
+            } else if (bundle.get("three") != null) {
                 cryptoCurrencyCall = client.getsixmonthETH();
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getsixmonthBTC();
             }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getsixmonthBTC();
+
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getsixmonthBCH();
             }
 
         }
-        else if(whichType.equals("one_year"))
-        {
+
+        else if (whichType.equals("one_year")) {
 
 
-            if(bundle.get("two")!=null)
-            {
+            if (bundle.get("two") != null) {
                 cryptoCurrencyCall = client.getoneyearXRP();
-            }
-            else  if(bundle.get("three")!=null)
-            {
+            } else if (bundle.get("three") != null) {
                 cryptoCurrencyCall = client.getoneyearETH();
+            } else if (bundle.get("one") != null) {
+                cryptoCurrencyCall = client.getoneyearBTC();
             }
-            else  if(bundle.get("one")!=null)
-            {
-                cryptoCurrencyCall=client.getoneyearBTC();
+
+            else if (bundle.get("five") != null) {
+                cryptoCurrencyCall = client.getoneyearBCH();
             }
 
         }
@@ -470,8 +596,7 @@ public class ExploreActivity extends AppCompatActivity {
 
                 if (getprice.size() != 0) {
 
-                    if(whichType.equals("one_hour"))
-                    {
+                    if (whichType.equals("one_hour")) {
                         array.add(dateformat(getprice.get(getprice.size() - 1).get(0)));
                         array.add(dateformat(getprice.get(getprice.size() - 4).get(0)));
                         array.add(dateformat(getprice.get(getprice.size() - 7).get(0)));
@@ -479,100 +604,76 @@ public class ExploreActivity extends AppCompatActivity {
                         List<Float> array_value = new ArrayList<>();
 
 
-                        buy.setText("$"+String.valueOf(getprice.get(getprice.size() - 1).get(1)));
+                        buy.setText("$" + String.valueOf(getprice.get(getprice.size() - 1).get(1)));
                         below_price.setText(RateDifferenceoneHour().toString());
                         display_difference.setText("since an hour ago");
                         array_value.add(getprice.get(getprice.size() - 7).get(1));
 
 
-
-                    }
-                    else if(whichType.equals("one_day"))
-                    {
-                        buy.setText("$"+String.valueOf(getprice.get(getprice.size() - 1).get(1)));
+                    } else if (whichType.equals("one_day")) {
+                        buy.setText("$" + String.valueOf(getprice.get(getprice.size() - 1).get(1)));
                         below_price.setText(RateDifferenceoneday().toString());
                         display_difference.setText("since yesterday");
-                    }
-                    else if(whichType.equals("one_week") )
-                    {
-                        buy.setText("$"+String.valueOf(getprice.get(0).get(1)));
+                    } else if (whichType.equals("one_week")) {
+                        buy.setText("$" + String.valueOf(getprice.get(0).get(1)));
                         below_price.setText(RateDiffernce().toString());
                         display_difference.setText("since last week");
-                    }
-                    else if(whichType.equals("one_month"))
-                    {
-                        buy.setText("$"+String.valueOf(getprice.get(0).get(1)));
+                    } else if (whichType.equals("one_month")) {
+                        buy.setText("$" + String.valueOf(getprice.get(0).get(1)));
                         below_price.setText(RateDiffernce().toString());
                         display_difference.setText("since last month");
 
-                    }
-                    else if(whichType.equals("three_month"))
-                    {
-                        buy.setText("$"+String.valueOf(getprice.get(0).get(1)));
+                    } else if (whichType.equals("three_month")) {
+                        buy.setText("$" + String.valueOf(getprice.get(0).get(1)));
                         below_price.setText(RateDiffernce().toString());
                         display_difference.setText("since 3 months");
-                    }
-                    else  if(whichType.equals("six_month"))
-                    {
-                        buy.setText("$"+String.valueOf(getprice.get(0).get(1)));
+                    } else if (whichType.equals("six_month")) {
+                        buy.setText("$" + String.valueOf(getprice.get(0).get(1)));
                         below_price.setText(RateDiffernce().toString());
                         display_difference.setText("since 6 months");
-                    }
-                    else if(whichType.equals("one_year"))
-                    {
-                        buy.setText("$"+String.valueOf(getprice.get(0).get(1)));
+                    } else if (whichType.equals("one_year")) {
+                        buy.setText("$" + String.valueOf(getprice.get(0).get(1)));
                         below_price.setText(RateDiffernce().toString());
                         display_difference.setText("since 1 year");
 
                     }
 
 
-
-
-
                 }
 
             }
 
 
-            public Float RateDifferenceoneday()
-            {
-                Float difference_oneday=getprice.get(getprice.size()-1).get(1)-getprice.get(0).get(1);
-                if(difference_oneday>0)
-                {
+            public Float RateDifferenceoneday() {
+                Float difference_oneday = getprice.get(getprice.size() - 1).get(1) - getprice.get(0).get(1);
+                if (difference_oneday > 0) {
                     below_price.setText(difference_oneday.toString());
                     below_price.setTextColor(Color.GREEN);
-                }
-                else {
+                } else {
                     below_price.setText(difference_oneday.toString());
                     below_price.setTextColor(Color.RED);
                 }
                 return difference_oneday;
             }
-            public Float RateDiffernce()
-            {
-                Float difference_oneweek=getprice.get(getprice.size()-1).get(1)-getprice.get(0).get(1);
-                if(difference_oneweek>0)
-                {
+
+            public Float RateDiffernce() {
+                Float difference_oneweek = getprice.get(getprice.size() - 1).get(1) - getprice.get(0).get(1);
+                if (difference_oneweek > 0) {
                     below_price.setText(difference_oneweek.toString());
                     below_price.setTextColor(Color.GREEN);
-                }
-                else {
+                } else {
                     below_price.setText(difference_oneweek.toString());
                     below_price.setTextColor(Color.RED);
                 }
                 return difference_oneweek;
             }
 
-            public  Float RateDifferenceoneHour()
-            {
-                Float difference_onehour=getprice.get(getprice.size()-1).get(1)-getprice.get(getprice.size()-2).get(1);
-                if(difference_onehour>0)
-                {
+            public Float RateDifferenceoneHour() {
+                Float difference_onehour = getprice.get(getprice.size() - 1).get(1) - getprice.get(getprice.size() - 2).get(1);
+                if (difference_onehour > 0) {
                     below_price.setText(difference_onehour.toString());
                     below_price.setTextColor(Color.GREEN);
-                }
-                else {
+                } else {
                     below_price.setText(difference_onehour.toString());
                     below_price.setTextColor(Color.RED);
                 }
@@ -592,11 +693,13 @@ public class ExploreActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<CryptoCurrency> call, Throwable t) {
 
-                Log.d("ERROR ","",t);
+                Log.d("ERROR ", "", t);
             }
         });
         return whichType;
+
     }
+
 
 
     private String callgraph(Client client,final String whichType)
@@ -617,6 +720,15 @@ public class ExploreActivity extends AppCompatActivity {
             {
                 cryptoCurrencyCall=client.getGetonedayBTC();
             }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getonedayLTC();
+            }
+            else  if(bundle.get("five")!=null)
+            {
+                cryptoCurrencyCall=client.getonedayBCH();
+            }
+
 
         }
 
@@ -634,8 +746,18 @@ public class ExploreActivity extends AppCompatActivity {
             {
                 cryptoCurrencyCall=client.getGetonedayBTC();
             }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getonedayLTC();
+            }
+            else  if(bundle.get("five")!=null)
+            {
+                cryptoCurrencyCall=client.getonedayBCH();
+            }
 
-        } else if (whichType.equals("one_week")) {
+        }
+
+        else if (whichType.equals("one_week")) {
             if(bundle.get("two")!=null)
             {
 
@@ -650,8 +772,17 @@ public class ExploreActivity extends AppCompatActivity {
             {
                 cryptoCurrencyCall=client.getsevendayBTC();
             }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getsevendayLTC();
+            }
+            else  if(bundle.get("five")!=null)
+            {
+                cryptoCurrencyCall=client.getsevendayBCH();
+            }
 
         }
+
         else if(whichType.equals("one_month"))
         {
 
@@ -666,6 +797,14 @@ public class ExploreActivity extends AppCompatActivity {
             else  if(bundle.get("one")!=null)
             {
                 cryptoCurrencyCall=client.getonemonthBCT();
+            }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getonemonthLCT();
+            }
+            else  if(bundle.get("five")!=null)
+            {
+                cryptoCurrencyCall=client.getonemonthBCH();
             }
 
         }
@@ -685,6 +824,14 @@ public class ExploreActivity extends AppCompatActivity {
             {
                 cryptoCurrencyCall=client.getthreemonthBTC();
             }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getthreemonthLTC();
+            }
+            else  if(bundle.get("five")!=null)
+            {
+                cryptoCurrencyCall=client.getthreemonthBCH();
+            }
 
         }
         else if(whichType.equals("six_month"))
@@ -703,6 +850,14 @@ public class ExploreActivity extends AppCompatActivity {
             {
                 cryptoCurrencyCall=client.getsixmonthBTC();
             }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getsixmonthLTC();
+            }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getsixmonthBCH();
+            }
 
         }
         else if(whichType.equals("one_year"))
@@ -720,6 +875,14 @@ public class ExploreActivity extends AppCompatActivity {
             else  if(bundle.get("one")!=null)
             {
                 cryptoCurrencyCall=client.getoneyearBTC();
+            }
+            else  if(bundle.get("four")!=null)
+            {
+                cryptoCurrencyCall=client.getoneyearLTC();
+            }
+            else  if(bundle.get("five")!=null)
+            {
+                cryptoCurrencyCall=client.getoneyearBCH();
             }
 
         }
@@ -898,28 +1061,48 @@ public class ExploreActivity extends AppCompatActivity {
         });
         return whichType;
     }
-    private void showFilterPopup(View view)
+   /* private void showFilterPopup(View view)
     {
-        PopupMenu popupMenu=new PopupMenu(this,view);
+        final PopupMenu popupMenu=new PopupMenu(this,view);
         popupMenu.inflate(R.menu.exchanges);
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId())
                 {
+
                     case R.id.zebpay:
-                        Intent intent = new Intent(getApplicationContext(),All_Exchange_Activity.class);
-                        String TAG="Zebpay";
-                        intent.putExtra("zebpay",TAG);
-                        startActivity(intent);
-                       // Toast.makeText(getApplicationContext(),"hello zebpay",Toast.LENGTH_SHORT).show();
-                        return true;
+                        int TAGZEBPAY=54;
+                        if(bundle.get("one")!=null )
+                        {
+                            popupMenu.getMenu().findItem(R.id.zebpay).setVisible(true);
+                          Intent intent = new Intent(getApplication(),ExhchangeFragment.class);
+
+                            intent.putExtra("zebpay",TAGZEBPAY);
+                            startActivity(intent);
+                           // Toast.makeText(getApplicationContext(),"hello zebpay",Toast.LENGTH_SHORT).show();
+                            return true;
+                        }
+                        else {
+                                popupMenu.getMenu().findItem(R.id.zebpay).setVisible(false);
+                        }
+
+
+
+
                     case R.id.coin_secure:
-                    Toast.makeText(getApplicationContext(),"hello coinsecure",Toast.LENGTH_SHORT).show();
-                    return true;
+                        if(bundle.get("one")!=null || bundle.get("two")!=null)
+                        {
+                            Toast.makeText(getApplicationContext(),"hello coinsecure",Toast.LENGTH_SHORT).show();
+                            return true;
+                        }
+                        else {
+                            item.setVisible(false);
+                        }
+
 
                     case R.id.unocoin:
-                        Intent intent1= new Intent(getApplicationContext(),All_Exchange_Activity.class);
+                        Intent intent1= new Intent(getApplicationContext(),ExhchangeFragment.class);
                         String TAGUnocoin="Unocoin";
                         intent1.putExtra("unocoin",TAGUnocoin);
                         startActivity(intent1);
@@ -932,6 +1115,14 @@ public class ExploreActivity extends AppCompatActivity {
         });
         popupMenu.show();
 
+    }
+*/
+    public void exchange()
+    {
+        if(bundle.get("one")!=null)
+        {
+
+        }
     }
 
 }

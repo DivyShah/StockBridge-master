@@ -1,13 +1,25 @@
 package com.example.abc.stockbridge;
 
+import java.io.StringReader;
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
 
-/**
- * Created by Priyank Jain on 08-09-2017.
- */
+
 
 public class Utils {
+
+
+
+
+
+
+
+
+
+
+
+
+    static String zebpay_bitcoin="Zebpay";
     static String gold = "Gold";
     static String indian = "Indian";
     static String yen = "Yen";
@@ -41,6 +53,21 @@ public class Utils {
     static String six_month_bitcoin="180DayBTC";
     static String one_year_bitcoin="365DAYBTC";
     static String latest_price="Latest Price";
+    static String one_day_litecoin="1DAYLTC";
+    static String seven_day_litecoin="7DAYLTC";
+    static String one_month_litecoin="1MONLTC";
+    static String three_montyh_litecoin="3MONLTC";
+    static String six_month_litecoin="6MONLTC";
+    static String one_year_litecoin="1YEARLTC";
+
+    static String bitcoin_cash="Bitcoin_Cash";
+    static String one_day_bitcoin_cash="1DAYLTC";
+    static String seven_day_bitcoin_cash="7DAYLTC";
+    static String one_month_bitcoin_cash="1MONLTC";
+    static String three_montyh_bitcoin_cash="3MONLTC";
+    static String six_month_bitcoin_cash="6MONLTC";
+    static String one_year_bitcoin_cash="1YEARLTC";
+    static String koinex_bitcoin="Koinex_bitcon";
     private static HashMap<String,String> hashMap= new HashMap<String,String>();
 
     static {
@@ -57,7 +84,8 @@ public class Utils {
         hashMap.put(Utils.bitcoingraph,"https://chart.zebpay.com/");
         hashMap.put(Utils.ripple,"https://api.coinmarketcap.com/v1/ticker/");
         hashMap.put(Utils.ethereum,"https://api.coinmarketcap.com/v1/ticker/");
-        hashMap.put(Utils.litecoin,"");
+        hashMap.put(Utils.litecoin,"https://api.coinmarketcap.com/v1/ticker/");
+        hashMap.put(Utils.bitcoin_cash,"https://api.coinmarketcap.com/v1/ticker/");
         hashMap.put(Utils.one_day_etherum,"http://coincap.io/history/");
         hashMap.put(Utils.seven_day_ethereum,"http://coincap.io/history/");
         hashMap.put(Utils.one_month_etherum,"http://coincap.io/history/");
@@ -77,6 +105,22 @@ public class Utils {
         hashMap.put(Utils.six_month_bitcoin,"http://coincap.io/history/");
         hashMap.put(Utils.one_year_bitcoin,"http://coincap.io/history/");
         hashMap.put(Utils.latest_price,"https://api.coinmarketcap.com/v1/");
+        hashMap.put(Utils.one_day_litecoin,"http://coincap.io/history/");
+        hashMap.put(Utils.seven_day_litecoin,"http://coincap.io/history/");
+        hashMap.put(Utils.one_month_litecoin,"http://coincap.io/history/");
+        hashMap.put(Utils.three_montyh_litecoin,"http://coincap.io/history/");
+        hashMap.put(Utils.six_month_litecoin,"http://coincap.io/history/");
+        hashMap.put(Utils.one_year_litecoin,"http://coincap.io/history/");
+        hashMap.put(Utils.zebpay_bitcoin,"https://www.zebapi.com/api/v1/market/");
+        hashMap.put(Utils.koinex_bitcoin,"https://koinex.in/api/ticker");
+
+        hashMap.put(Utils.one_day_bitcoin_cash,"http://coincap.io/history/");
+        hashMap.put(Utils.seven_day_bitcoin_cash,"http://coincap.io/history/");
+        hashMap.put(Utils.one_month_bitcoin_cash,"http://coincap.io/history/");
+        hashMap.put(Utils.three_montyh_bitcoin_cash,"http://coincap.io/history/");
+        hashMap.put(Utils.six_month_bitcoin_cash,"http://coincap.io/history/");
+        hashMap.put(Utils.one_year_bitcoin_cash,"http://coincap.io/history/");
+
 
     }
 
