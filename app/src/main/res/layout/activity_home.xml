@@ -15,7 +15,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
+
 
         <TextView
             android:id="@+id/crypto"
@@ -30,13 +32,82 @@
             android:layout_height="100dp"
             android:textStyle="italic"
             />
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/sub_data"/>
+            android:visibility="gone"
+            android:id="@+id/expandable">
+            <View
+                android:id="@+id/dummy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_marginLeft="0dp"
+                android:layout_toLeftOf="@id/dummy"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_textview"
+                android:id="@+id/bitcoin"
+                android:drawablePadding="15dp"
+                android:drawableLeft="@drawable/bitcoin2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="right"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/bitcoin"
+                android:drawableLeft="@drawable/ethereum"
+                android:drawablePadding="15dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ethereum"
+                android:background="@drawable/rounded_textview"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bitcoin"
+                android:id="@+id/ripple"
+                android:drawableLeft="@drawable/ripple"
+                android:background="@drawable/rounded_textview"
+                android:drawablePadding="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/litecoin"
+                android:drawablePadding="15dp"
+                android:layout_below="@id/ethereum"
+                android:layout_toRightOf="@+id/ripple"
+                android:background="@drawable/rounded_textview"
+                android:id="@+id/litecoin"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/bitcoincash"
+                android:drawablePadding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_textview"
+                android:layout_below="@+id/ripple"
+                android:id="@+id/bitcoin_cash"
+                />
+
+
+
+        </RelativeLayout>
+
+
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -51,14 +122,35 @@
             android:layout_height="100dp"
             android:textStyle="italic"
             />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:id="@+id/commodity_linearlayout"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+                android:background="@drawable/rounded_textview"
+                android:gravity="center"
+                android:text="Comming Soon"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/commodity_details"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/news"
-
             android:text="News"
             android:layout_gravity="center"
             android:gravity="center"
@@ -68,9 +160,30 @@
             android:layout_height="100dp"
             android:textStyle="italic"
             />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:id="@+id/news_expan"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+                android:background="@drawable/rounded_textview"
+                android:gravity="center"
+                android:text="Comming Soon"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/news1"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -85,5 +198,26 @@
             android:layout_height="100dp"
             android:textStyle="italic"
             />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:id="@+id/mutualfund_expan"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+                android:background="@drawable/rounded_textview"
+                android:gravity="center"
+                android:text="Comming Soon"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/mutual_fund_detail"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -31,6 +31,10 @@ public class All_Exchange_Activity extends AppCompatActivity {
             client=ServiceGenrator.createService(Client.class,s);
             callzebpay(client);
         }
+        else
+        {
+
+        }
 
 
 

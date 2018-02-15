@@ -1,3 +1,99 @@
 <resources>
     <string name="app_name">StockBridge</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bitcoin">\u2022\u0020Bitcoin is a digital asset and a payment system.
+        \n\u2022\u0020It is commonly called a decentralized digital \u0020\u0020currency.
+\n\u2022\u0020 It was invented by Satoshi Nakamoto in 2009.
+        \n\u2022\u0020It is an open source software. \n\u2022\u0020This means, that no person, company or country owns this network just like no one owns the Internet.
+\n\u2022\u0020The system is peer-to-peer, that is, users can transact directly without an intermediary like a bank, a credit card company or a clearing house.
+\n\u2022\u0020Transactions are verified by network nodes and recorded in a public distributed ledger called the blockchain</string>
+
+    <string name="litecoin">
+        \u2022\u0020Litecoin (LTC or Ł) is a peer-to-peer cryptocurrency released under the MIT/X11 license.\n\u2022\u0020Litecoin was invented by Charlie Lee in October 2011.
+\n\u2022\u0020It is a global decentralized currency based on blockchain technology and an open source software project.
+\n\u2022\u0020This cryptocurrency features a capacity to handle a higher volume of transactions instantly with extremely low payment transaction cost.
+\n\u2022\u0020Litecoin is recognized as a global payment network.
+\n\u2022\u0020To process a block, litecoin takes 2.5 minutes and has a maximum total supply of 84 million units.
+    </string>
+
+    <string name="etherum">
+       \u2022\u0020 Ethereum is a world computer running on nodes distributed worldwide.
+        \n\u2022\u0020It runs on a blockchain secured by miners executing a Proof of Work consensus algorithm, with plans to move to a Proof of Stake consensus algorithm.
+        \n\u2022\u0020Ether (ETH) is the currency which is used to run smart contracts on the Ethereum platform.
+        \n\u2022\u0020Ethereum provides the Ethereum Virtual Machine (EVM) a decentralized Turing-complete virtual machine. “Gas”, an internal transaction pricing mechanism, is used to mitigate spam and allocate resources on the network.
+        \n\u2022\u0020Ethereum was proposed by Vitalik Buterin in 2013 and the public network went live in in July 2015.
+        \n\u2022\u0020The average blocktime in Ethereum is about 15-20 seconds.
+
+    </string>
+
+    <string name="ripple">
+         \u2022\u0020Ripple is a system of the real time gross settlements, currency exchange and money transfer system. It is known as Ripple protocol or Ripple transaction protocol (RTXP).
+        \n\u2022\u0020XRP is the native currency of the Ripple network. XRP are currently divisible to 6 decimal places, and the smallest unit is called a drop with 1 million drops equaling 1 XRP.
+         \n\u2022\u0020The Ripple protocol is based on an open shared database or ledger using the consensus process, which allows making payments, exchange or transfers of money in a distributed process denominated in arbitrary real world assets like dollars, gold, airmiles etc.
+        \n\u2022\u0020Ripple was first implemented in 2004 by Ryan Fugger and later in 2012 the Ripple protocol was launched with the main goal of ensuring “secure, instant and almost free global money operations of any size without any chargebacks”.
+
+    </string>
+
+    <string name="bitcoin_cash">
+\u2022\u0020Bitcoin Cash aims to be a peer-to-peer electronic cash . All Bitcoin holders as of block 478558 are also owners of Bitcoin Cash.
+        \n\u2022\u0020BCH is a fork of Bitcoin that happened on August 1st, 2017. It is a fork of the Bitcoin blockchain ledger with low fees and fast confirmations.
+        \n\u2022\u0020The transaction history prior to August 1st is common between both Bitcoin and Bitcoin Cash.
+ \n\u2022\u0020Bitcoin Cash team has increased the block size limit from 1MB to 8MB.
+         \n\u2022\u0020It is usually represented by the symbol BCH.
+
+    </string>
+
+
+    <string name="action_sign_in_short">Register</string>
+    <string name="email">Email</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_password">Change Password</string>
+    <string name="send_password_reset_email">Send Password reset email</string>
+    <string name="remove_user">Remove user</string>
+    <string name="new_pass">New Password</string>
+    <string name="title_activity_profile">Blood Info</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hicalcucalnt_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Not a member? Get registered in Blood Info now!</string>
+    <string name="btn_link_to_login">Already registered. Login Me!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="btn_forgot_password">Forgot your password?</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">New Email</string>
+    <string name="btn_change">Change</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+
+
+
+
+
+    <string-array name="exchanges">
+        <item>zebpay</item>
+        <item>unocoin</item>
+        <item>koinex</item>
+    </string-array>
+
 </resources>
+
