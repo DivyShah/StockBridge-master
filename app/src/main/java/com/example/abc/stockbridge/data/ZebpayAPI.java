@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * Created by Priyank Jain on 09-09-2017.
  */
 
-public class ZebpayAPI extends ArrayList<ZebpayAPI> {
+public class ZebpayAPI {
 
     @SerializedName("market")
     @Expose
@@ -93,8 +93,5 @@ public class ZebpayAPI extends ArrayList<ZebpayAPI> {
         return this;
     }
 
-    @Override
-    public Stream<ZebpayAPI> stream() {
-        return null;
-    }
+
 }
