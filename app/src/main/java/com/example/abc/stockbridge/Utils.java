@@ -20,6 +20,10 @@ public class Utils {
 
 
     static String zebpay_bitcoin="Zebpay";
+    static  String zebpay_etherum="Zebpay_Etherum";
+    static String zebpay_ripple="Zebpay_ripple";
+    static String zebpay_litecoin="Zebpay_litecoin";
+    static String zebpay_cash="Zebpay_bitocincash";
     static String gold = "Gold";
     static String indian = "Indian";
     static String yen = "Yen";
@@ -68,6 +72,21 @@ public class Utils {
     static String six_month_bitcoin_cash="6MONLTC";
     static String one_year_bitcoin_cash="1YEARLTC";
     static String koinex_bitcoin="Koinex_bitcon";
+
+    static String Unocoin="Uncoin";
+
+    static String buyucoin_bitcoin="BUyUCoin_bitocoin";
+    static String buyucoin_ripple="BUyUCoin_eipple";
+    static String buyucoin_etherum="BUyUCoin_bitocoin";
+    static String buyucoin_litecoin="BUyUCoin_bitocoin";
+    static String buyucoin_bitcoincash="BUyUCoin_bitocoin";
+
+
+    static  String ethexindia="Ethexindia";
+
+    static  String btcxindia_ripple="BTCXindia_ripple";
+
+
     private static HashMap<String,String> hashMap= new HashMap<String,String>();
 
     static {
@@ -111,8 +130,9 @@ public class Utils {
         hashMap.put(Utils.three_montyh_litecoin,"http://coincap.io/history/");
         hashMap.put(Utils.six_month_litecoin,"http://coincap.io/history/");
         hashMap.put(Utils.one_year_litecoin,"http://coincap.io/history/");
-        hashMap.put(Utils.zebpay_bitcoin,"https://www.zebapi.com/api/v1/market/");
-        hashMap.put(Utils.koinex_bitcoin,"https://koinex.in/api/ticker");
+        hashMap.put(Utils.zebpay_bitcoin,"https://www.zebapi.com/api/v1/market/ticker-new/btc/");
+
+        hashMap.put(Utils.koinex_bitcoin,"https://koinex.in/api/");
 
         hashMap.put(Utils.one_day_bitcoin_cash,"http://coincap.io/history/");
         hashMap.put(Utils.seven_day_bitcoin_cash,"http://coincap.io/history/");
@@ -122,6 +142,24 @@ public class Utils {
         hashMap.put(Utils.one_year_bitcoin_cash,"http://coincap.io/history/");
 
 
+        hashMap.put(Utils.zebpay_etherum,"https://www.zebapi.com/api/v1/market/ticker-new/ltc/");
+        hashMap.put(Utils.zebpay_litecoin,"https://www.zebapi.com/api/v1/market/ticker-new/ltc/");
+        hashMap.put(Utils.zebpay_ripple,"https://www.zebapi.com/api/v1/market/ticker-new/xrp/");
+        hashMap.put(Utils.zebpay_cash,"https://www.zebapi.com/api/v1/market/ticker-new/bch/");
+
+
+        hashMap.put(Utils.buyucoin_bitcoin,"https://www.buyucoin.com/api/v1/");
+        hashMap.put(Utils.buyucoin_ripple,"https://www.buyucoin.com/api/v1/");
+        hashMap.put(Utils.buyucoin_etherum,"https://www.buyucoin.com/api/v1/");
+        hashMap.put(Utils.buyucoin_litecoin,"https://www.buyucoin.com/api/v1/");
+        hashMap.put(Utils.buyucoin_bitcoincash,"https://www.buyucoin.com/api/v1/");
+
+
+        hashMap.put(Utils.ethexindia,"https://ethexindia.com/api/");
+
+        hashMap.put(Utils.Unocoin,"https://www.unocoin.com/");
+
+        hashMap.put(Utils.btcxindia_ripple,"https://api.btcxindia.com/");
     }
 
     public static String getAPI(String key){

@@ -1,6 +1,12 @@
 package com.example.abc.stockbridge.network;
 
+import com.example.abc.stockbridge.data.BTCXIndia;
+import com.example.abc.stockbridge.data.Buyu.BuyUCoin;
+import com.example.abc.stockbridge.data.Buyu.BuyUcoinDatum;
+import com.example.abc.stockbridge.data.ETHXINDIA;
+import com.example.abc.stockbridge.data.Koinex.Koinex;
 import com.example.abc.stockbridge.data.LatestCrypto;
+import com.example.abc.stockbridge.data.Message;
 import com.example.abc.stockbridge.data.ZebpayAPI;
 import com.example.abc.stockbridge.data.CoinSecure;
 import com.example.abc.stockbridge.data.Crypto;
@@ -16,11 +22,19 @@ import retrofit2.http.GET;
 
 public interface Client {
 
+
+
+
     @GET("inr")
     Call<ZebpayAPI> getBitcoin();
+    @GET("inr")
+    Call<ZebpayAPI> getzebpayripple();
+    @GET("inr")
+    Call<ZebpayAPI> getzebpayLitecoin();
+    @GET("inr")
+    Call<ZebpayAPI> getzebpaybitcoin_cash();
 
-    @GET("trade?all")
-    Call<Unocoin> getUncoin();
+
 
     @GET("ticker?apiKey=YYpKw3obuJvRWB0JgchzhT9iMPlSKZdPGJCH5eEH")
     Call<CoinSecure> getCoinsecure();
@@ -104,6 +118,33 @@ public interface Client {
     Call<List<ZebpayAPI>> getbitcoinzebpay();
 
 
+    @GET("btc/")
+    Call<BuyUCoin> getBuyUCOin_bitcoin();
+    @GET("xrp/")
+    Call<BuyUCoin> getBuyUCOin_ripple();
+    @GET("eth/")
+    Call<BuyUCoin> getBuyUCOin_ethereum();
+    @GET("ltc/")
+    Call<BuyUCoin> getBuyUCOin_litecoin();
+    @GET("ltc/")
+    Call<BuyUCoin> getBuyUCOin_bitcoincash();
+
+
+
+
+    @GET("trade?all")
+    Call<Unocoin> getUNcoin();
+
+
+    @GET("ticker")
+    Call<Koinex> getcoinex();
+
+
+    @GET("ticker")
+    Call<ETHXINDIA> getethxindia();
+
+    @GET("ticker/")
+    Call<BTCXIndia> getbtcXindia_ripple();
 
 
 }

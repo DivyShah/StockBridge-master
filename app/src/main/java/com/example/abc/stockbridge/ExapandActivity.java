@@ -72,7 +72,7 @@ public class ExapandActivity extends Activity {
                    // Log.e("hello","hi");
                     String s= Utils.getAPI(Utils.coinsecure);
                     client=ServiceGenrator.createService(Client.class,s);
-                    callCoinSecure(client);
+                   // callCoinSecure(client);
                 }
 
 
@@ -115,7 +115,7 @@ public class ExapandActivity extends Activity {
     }
     private void callUnocoin(Client client)
     {
-        Call<Unocoin> unocoinCall=client.getUncoin();
+        Call<Unocoin> unocoinCall=client.getUNcoin();
         unocoinCall.enqueue(new Callback<Unocoin>() {
             @Override
             public void onResponse(Call<Unocoin> call, Response<Unocoin> response) {
@@ -139,7 +139,7 @@ public class ExapandActivity extends Activity {
         });
     }
 
-    private void callCoinSecure(Client client)
+    /*private void callCoinSecure(Client client)
     {
         Call<CoinSecure> messageCall= client.getCoinsecure();
         messageCall.enqueue(new Callback<CoinSecure>() {
@@ -165,5 +165,5 @@ public class ExapandActivity extends Activity {
         });
     }
 
-
+*/
 }

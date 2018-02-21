@@ -1,6 +1,8 @@
 package com.example.abc.stockbridge;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -28,13 +30,21 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ConnectivityManager connectivityManager= (ConnectivityManager)getSystemService(this.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();
+        if(networkInfo!=null && networkInfo.isConnected())
+        {
+            Toast.makeText(getApplicationContext(),"Make Sure you must be connected with the Internet",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"Please switch on your internet",Toast.LENGTH_LONG).show();
+        }
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        /*if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
-        }*/
+
+
 
         // set the view now
         setContentView(R.layout.activity_login);
